@@ -1,0 +1,18 @@
+#!/bin/bash
+# local-vars: script esempio variabili globali e locali
+myVar=0 # global variable myVar
+funct_1 () {
+local myVar # variable myVar local to funct_1
+myVar=1
+echo “funct_1: myVar= $myVar”
+}
+funct_2 () {
+local myVar# variable myVar local to funct_2
+myVar=2
+echo “funct_2: myVar= $myVar”
+}
+echo “global: myVar= $myVar”
+funct_1
+echo “global: myVar= $myVar”
+funct_2
+echo “global: myVar= $myVar”
